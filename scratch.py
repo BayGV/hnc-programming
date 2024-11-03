@@ -1,21 +1,8 @@
-currentWeightInput = "eighty"
-try: 
-    currentWeight = int(currentWeightInput)
-except:
-    print("Invalid value.")
+privateSession = 6
 
-#decision on weight class depending on input
-if(currentWeight > 100):
-    currentWeightCategory = "Heavyweight"
-elif((currentWeight <= 100) and (currentWeight > 90)):
-    currentWeightCategory = "Light-Heavyweight"
-elif((currentWeight <= 90) and (currentWeight > 81)):
-    currentWeightCategory = "Middleweight"
-elif((currentWeight <= 81) and (currentWeight > 73)):
-    currentWeightCategory = "Light-Middleweight"
-elif((currentWeight <= 73) and (currentWeight > 66)):
-    currentWeightCategory = "Lightweight"
+#private session calculation
+if(privateSession > 5):
+    print("Athletes cannot have more than 5 private sessions a week.\nPlease complete the form again.")
 else:
-    currentWeightCategory = "Flyweight"
-
-print(currentWeightCategory)
+    privateSessionCost = float((privateSession * 9.5) * 4)
+    print(privateSessionCost)
