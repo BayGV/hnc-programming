@@ -121,12 +121,12 @@ class AthleteCalculator:
 
         #configuring the result values after button click
         self.athleteNameResult.config(text=f"Athlete name: {athleteName}")
-        self.trainingPlanResult.config(text=f"Training plan cost per month: £{trainingCostPerMonth}")
+        self.trainingPlanResult.config(text=f"Training plan cost per month: £{trainingCostPerMonth:.2f}")
         self.currentWeightResult.config(text=f"Current weight category: {currentWeightCategory}")
         self.competitionWeightResult.config(text=f"Competition weight category: {competitionWeightCategory}")
-        self.competitionCostResult.config(text=f"Cost of competitions entered this month: £{competitionCost}")
-        self.privateSessionResult.config(text=f"Cost of private sessions this month: £{privateSessionCost}")
-        self.totalCostResult.config(text=f"Total monthly cost: £{totalCost}")
+        self.competitionCostResult.config(text=f"Cost of competitions entered this month: £{competitionCost:.2f}")
+        self.privateSessionResult.config(text=f"Cost of private sessions this month: £{privateSessionCost:.2f}")
+        self.totalCostResult.config(text=f"Total monthly cost: £{totalCost:.2f}")
 
 #initialising the GUI
 if __name__ == "__main__":
