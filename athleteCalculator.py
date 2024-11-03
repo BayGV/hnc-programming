@@ -68,10 +68,19 @@ class AthleteCalculator:
         #setting the variables used in the function
         athleteName = str(self.athleteNameInput.get())
         trainingPlan = str(self.trainingPlanVar.get())
-        currentWeight = int(self.currentWeightInput.get())
+        try:
+            currentWeight = int(self.currentWeightInput.get())
+        except ValueError:
+            self.currentWeightResult.config(text="Current weight category: Invalid value.\nPlease enter a whole number.")
         competitionWeightCategory = str(self.competitionWeightCategoryVar.get())
-        competitions = int(self.competitionsInput.get())
-        privateSession = int(self.privateSessionInput.get())
+        try: 
+            competitions = int(self.competitionsInput.get())
+        except ValueError:
+            self.competitionCostResult.config(text="Cost of competitions entered this month: Invalid value.\nPlease enter a whole number.")
+        try:
+            privateSession = int(self.privateSessionInput.get())
+        except ValueError:
+            self.privateSessionResult.config(text=f"Cost of private sessions this month: Invalid value.\nPlease enter a whole number.")
 
         #training plan calculation
         if(trainingPlan == "Beginner"):
@@ -96,7 +105,7 @@ class AthleteCalculator:
             currentWeightCategory = "Flyweight"
 
         #decision/calculation on competitions based on training plan level
-        if trainingPlan == "Beginner":
+        if(trainingPlan == "Beginner") and (competitions > 0):
             self.competitionCostResult.config(text="Beginners cannot enter competitions.\nPlease complete the form again.")
         else:
             competitionCost = competitions * 22
