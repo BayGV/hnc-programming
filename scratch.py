@@ -1,4 +1,4 @@
-privateSession = 6
+privateSession = 2
 
 #private session calculation
 if(privateSession > 5):
